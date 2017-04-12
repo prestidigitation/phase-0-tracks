@@ -1,5 +1,20 @@
+body {
+    margin: 1%;
+    padding: 2%;
+    border-width: 5px;
+    border-radius: 10px;
+    border-color: grey grey pink grey;
+    border-style: dotted solid dashed solid;
+}
+
 header {
     text-align: center;
+}
+
+nav {
+    font-family: "Arvo";
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .articleStyling {
