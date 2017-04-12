@@ -1,0 +1,22 @@
+header {
+    text-align: center;
+}
+
+.articleStyling {
+    margin-bottom: 225px; 
+}
+
+.sectionStyling {
+    margin-bottom: 225px;
+}
+
+.paragraphBox {
+    width: 200px;
+    margin: 0px;
+    float: left;
+}
+
+.img-valign {
+    float: left;
+    margin-left: 10%;
+}
