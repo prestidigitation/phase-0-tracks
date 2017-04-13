@@ -1,0 +1,114 @@
+body {
+    background-color: #e6ffe6;
+    margin: 1%;
+    padding: 2%;
+    border-width: 5px;
+    border-radius: 10px;
+    border-color: grey grey pink grey;
+    border-style: dotted solid dashed solid;
+}
+
+a:link {
+    color: #cc00ff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #660066;
+}
+
+a:active {
+    color: red;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    font-family: "Arvo";
+    font-weight: bold;
+    font-size: 25px;
+}
+
+main {
+    margin-top: 30px;
+}
+
+table {
+    border-width: 5px;
+    border-color: hotpink;
+    border-style: double;
+    margin-bottom: 30px;
+    font-family: "Verdana";
+}
+
+td {
+    border-width: 1px;
+    border-color: hotpink;
+    border-style: dotted;
+}
+
+.tdEmpty {
+    border-style: none;
+}
+
+.pinkHover:hover {
+    background-color: pink;
+}
+
+.iconResize {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.articleStyling {
+    margin-bottom: 225px; 
+}
+
+.sectionStyling {
+    margin-bottom: 225px;
+}
+
+.paragraphBox {
+    width: 200px;
+    margin: 0px;
+    float: left;
+}
+
+.img-valign {
+    float: left;
+    margin-left: 10%;
+}
+
+.divSpacer {
+    margin-top: 50px;
+}
+
+.container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #aaa;
+    text-align: center;
+}
+
+.imgScaling {
+    width: 99%;
+    height: auto;
+}
+
+.bannerScaling {
+    max-width: 791px;
+}
+
+.answersStyling {
+    max-width: 610px;
+}
+
+#share-buttons {
+    margin-top: 40px;
+}

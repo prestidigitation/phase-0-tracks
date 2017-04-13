@@ -1,88 +1,165 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Coatis are Cool!</title>
+    <title>Coatis are Cool!</title>
 </head>
 <body>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 <header>
-	<img src="images/coati_banner.gif">
-	<nav>
-		<a href="habitat.html">Habitat</a>
-		<a href="taxonomy.html">Taxonomy</a>
-		<a href="lifespan.html">Lifespan</a>
-	</nav>
+    <img class="imgScaling bannerScaling" src="images/coati_banner.gif" alt="coati_banner.gif">
+    <nav>
+       <a class="pinkHover" href="habitat.html">Habitat</a>
+       <img class="iconResize" src="images/worldwide.png" alt="worldwide.png">
+       <a class="pinkHover" href="taxonomy.html">Taxonomy</a>
+       <img class="iconResize" src="images/worldwide.png" alt="worldwide.png">
+       <a class="pinkHover" href="lifespan.html">Lifespan</a>
+    </nav>
 </header>
-
+<hr>
 <main>
-The coati is a member of Procyonidae, which is the raccoon family, eww! It is also known by the following names:
-<ul>
-	<li>Coati-Mundi/coatimundi</li>
-	<li>hog-nosed coon</li>
-	<li>tejón</li>
-	<li>cholugo</li>
-	<li>moncún</li>
-	<li>pizote</li>
-	<li>cusumbo</li>
-</ul>
+    <article>
+        <section>
+    The coati is a member of Procyonidae, which is the raccoon family, eww! It is also known by the following names:
+            <ul>
+                <li>Coati-Mundi/coatimundi</li>
+                <li>hog-nosed coon</li>
+                <li>tejón</li>
+                <li>cholugo</li>
+                <li>moncún</li>
+                <li>pizote</li>
+                <li>cusumbo</li>
+            </ul>
+        </section>
+        <section class="sectionStyling">
+            <p class="paragraphBox">
+            Coatis are being over-hunted and their environments are being destroyed in Central and South America. There is currently a lack of data on coati population numbers so the impact of deforestation on coatis might be greater than is commonly thought.
+            </p>
+            <aside>
+                <a href="http://www.worldlandtrust.org/supporting/donate">
+                <img class="img-valign" src="images/button_donate-to-save-coati-habitats.png" alt="button_donate-to-save-coati-habitats.png">
+                </a>
+            </aside>
+        </section>
+    </article>
+    <article>   
+            
+    </article>
+    <article class="articleStyling">
+        <h2>Pictures of These Lovable Guys</h2>
+        <div class="container">
+            <img class="imgScaling" src="images/coati-976831_1920.jpg" alt="coati-976831_1920.jpg">
+            <img class="imgScaling" src="images/coati-716945_1920.jpg" alt="coati-716945_1920.jpg">
+            <img class="imgScaling" src="images/coati-1218406_1920.jpg" alt="coati-1218406_1920.jpg">
+        </div>
+    </article>
+
+<article>
+    <h3>Natural Predators</h3>
+    <table>
+        <tr>
+            <th>Birds</th>
+            <th>Cats</th>
+            <th>Other</th>
+        </tr>
+        <tr>
+            <td>ornate hawk-eagle</td>
+            <td>jaguars</td>
+            <td>fox</td>
+        </tr>
+        <tr>
+            <td>black-and-chesnut eagle</td>
+            <td>jaguarundi</td>
+            <td>dog</td>
+        </tr>
+        <tr>
+            <td rowspan="3">harpy eagle</td>
+            <td rowspan="3">boa constrictor</td>
+            <td>tayra</td>
+        </tr>
+        <tr>
+            <td>ocelots</td>
+        </tr>
+        <tr>
+            <td>white-headed capuchin monkey</td>
+        </tr>
+    </table>
+</article>
 </main>
 
-<img src="images/coati-976831_1920.jpg" width="960" height="640">
-<img src="images/coati-716945_1920.jpg" width="960" height="640">
-<img src="images/coati-1218406_1920.jpg" width="960" height="640">
+<div class="answersStyling">
+    <h3>What is the purpose of HTML5 semantic tags? Which ones do you see as most useful?</h3>
+    The purpose of HTML5 semantic tags is to provide additional meaning to the information on websites, taking it a step further than only defining the presentation of the info. For example, using the tag &#60;i&#62; has been somewhat deprecated as a way of italicizing text, and the use of &#60;em&#62; for emphasis has taken its place. In this way, the CSS file can define exactly how text should be emphasized on particular pages, so the focus is put on the semantic meaning that certain info is important rather than mere styling. This semantic meaning provides additional avenues for web crawlers to make sense of web sites.
+
+    I see the &#60;header&#62;, &#60;nav&#62;, and &#60;footer&#62; tags as being particularly useful since most websites with multiple pages can be improved by using uniform navigational features between pages.
+
+    <h3>What is the order the browser uses to display elements on a page?</h3>
+    The browser parses HTML from top to bottom, left to right, and thus the default order is displaying elements in the order they are put in HTML. For elements in the same level of a containing block, block elements are stacked vertically on top of one another and inline elements are arranged left to right.
+
+    <h3>What did you learn about Sublime in this challenge? Do you think you'll create more handy snippets at a later date?</h3>
+    I learned that Sublime's default settings are in a file that should not be modified, but that you can override them with separate user files.
+
+    I plan on creating several snippets in the future for various programming languages.
+
+    <h3>What concept in this challenge was most difficult for you? How can you improve your understanding of this concept?</h3>
+    The most difficult concept in this challenge was understanding how all of the different semantic elements are meant to be used together to create a cohesive website experience. I can improve my understanding of this concept by researching best practices for semantic elements use and placement.
+</div>
 
 <footer>
-	<nav>
-		<!-- I got these buttons from simplesharebuttons.com -->
-		<div id="share-buttons">
-		    
-		    <!-- Digg -->
-		    <a href="http://www.digg.com/submit?url=https://simplesharebuttons.com" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
-		    </a>
-		    
-		    <!-- Email -->
-		    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
-		        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-		    </a>
-		 
-		    <!-- Facebook -->
-		    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-		    </a>
-		    
-		    <!-- Google+ -->
-		    <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-		    </a>
-		    
-		    <!-- LinkedIn -->
-		    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
-		    </a>
-		    
-		    <!-- Pinterest -->
-		    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-		        <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
-		    </a>
-		    
-		    <!-- Reddit -->
-		    <a href="http://reddit.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
-		    </a>
-		    
-		    <!-- Tumblr-->
-		    <a href="http://www.tumblr.com/share/link?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
-		    </a>
-		     
-		    <!-- Twitter -->
-		    <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-		        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-		    </a>
+    <nav>
+       <!-- I got these buttons from simplesharebuttons.com -->
+       <div id="share-buttons">
+           
+           <!-- Digg -->
+           <a href="http://www.digg.com/submit?url=https://simplesharebuttons.com" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
+           </a>
+           
+           <!-- Email -->
+           <a href="mailto:alexander.c.rowland@gmail.com?subject=Simple%20Share%20Buttons&body=I%20saw%20this%20and%20thought%20of%20you!%20https://simplesharebuttons.com">
+               <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+           </a>
+        
+           <!-- Facebook -->
+           <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+           </a>
+           
+           <!-- Google+ -->
+           <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+           </a>
+           
+           <!-- LinkedIn -->
+           <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+           </a>
+           
+           <!-- Pinterest -->
+           <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+               <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+           </a>
+           
+           <!-- Reddit -->
+           <a href="http://reddit.com/submit?url=https://simplesharebuttons.com&amp;title=Simple%20Share%20Buttons" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+           </a>
+           
+           <!-- Tumblr-->
+           <a href="http://www.tumblr.com/share/link?url=https://simplesharebuttons.com&amp;title=Simple%20Share%20Buttons" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+           </a>
+            
+           <!-- Twitter -->
+           <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+               <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+           </a>
 
-		</div>
-	</nav>
+       </div>
+    </nav>
 </footer>
+
+<div class="divSpacer">Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 </body>
 </html>
