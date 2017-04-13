@@ -104,3 +104,11 @@ td {
 .bannerScaling {
     max-width: 791px;
 }
+
+.answersStyling {
+    max-width: 610px;
+}
+
+#share-buttons {
+    margin-top: 40px;
+}
