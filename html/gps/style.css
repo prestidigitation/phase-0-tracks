@@ -1,10 +1,24 @@
 body {
+    background-color: #e6ffe6;
     margin: 1%;
     padding: 2%;
     border-width: 5px;
     border-radius: 10px;
     border-color: grey grey pink grey;
     border-style: dotted solid dashed solid;
+}
+
+a:link {
+    color: #cc00ff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #660066;
+}
+
+a:active {
+    color: red;
 }
 
 header {
@@ -15,6 +29,21 @@ nav {
     font-family: "Arvo";
     font-weight: bold;
     font-size: 25px;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.pinkHover:hover {
+    background-color: pink;
+}
+
+.iconResize {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .articleStyling {
@@ -34,4 +63,8 @@ nav {
 .img-valign {
     float: left;
     margin-left: 10%;
+}
+
+.divSpacer {
+    margin-top: 50px;
 }
