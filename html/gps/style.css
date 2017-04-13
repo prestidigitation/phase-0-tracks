@@ -35,6 +35,24 @@ main {
     margin-top: 30px;
 }
 
+table {
+    border-width: 5px;
+    border-color: hotpink;
+    border-style: double;
+    margin-bottom: 30px;
+    font-family: "Verdana";
+}
+
+td {
+    border-width: 1px;
+    border-color: hotpink;
+    border-style: dotted;
+}
+
+.tdEmpty {
+    border-style: none;
+}
+
 .pinkHover:hover {
     background-color: pink;
 }
