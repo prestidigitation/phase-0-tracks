@@ -1,0 +1,27 @@
+#centered {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50, -50);
+}
+
+#octopus {
+    margin: auto;
+    margin-top: 60px;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+#glasses {
+    margin: auto;
+    margin-top: 160px;
+    margin-left: 60px;
+    position: absolute;
+    z-index: 2;
+}
+
+#hat {
+    margin: auto;
+    position: absolute;
+    z-index: 3;
+}
