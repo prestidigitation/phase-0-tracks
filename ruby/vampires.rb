@@ -14,6 +14,12 @@ def interview
     puts "You were born in #{year_of_birth}."
     puts "You want garlic bread: #{wants_garlic_bread}."
     puts "You would like to enroll in company health insurance: #{wants_health_insurance}"
+
+    age_verified = false
+    if 2017 - year_of_birth == age || 2017 - year_of_birth == age + 1
+        age_verified = true
+    end
+    puts "#{age_verified}"
 end
 
 interview
