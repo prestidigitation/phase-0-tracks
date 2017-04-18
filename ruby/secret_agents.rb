@@ -46,10 +46,29 @@ end
 # puts decrypt(gets.chomp)
 # puts encrypt(gets.chomp)
 
-puts decrypt(encrypt("swordfish"))
+# puts decrypt(encrypt("swordfish"))
 
 # The ruby interpreter runs the innermost method first (encrypt in this case) 
 # before running decrypt, so the output of the encrypt method is being used as 
 # the input for the decrypt method.
-# 
 
+answer = ""
+until answer == "e" || answer == "d"
+    puts "Would you like to encrypt or decrypt a password (e/d)?"
+    answer = gets.chomp
+end
+
+password = ""
+until password != ""
+    puts "Enter a password."
+    password = gets.chomp
+end
+
+result = ""
+if answer == "e"
+    result = encrypt(password)
+else
+    result = decrypt(password)
+end
+
+puts result
