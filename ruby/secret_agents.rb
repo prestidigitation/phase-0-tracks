@@ -26,7 +26,6 @@ def encrypt(string)
     encrypted_string
 end
 
-puts encrypt(gets.chomp)
 
 def decrypt(encrypted_string)
     len = encrypted_string.length
@@ -44,4 +43,13 @@ def decrypt(encrypted_string)
     decrypted_string
 end
 
-puts decrypt(gets.chomp)
+# puts decrypt(gets.chomp)
+# puts encrypt(gets.chomp)
+
+puts decrypt(encrypt("swordfish"))
+
+# The ruby interpreter runs the innermost method first (encrypt in this case) 
+# before running decrypt, so the output of the encrypt method is being used as 
+# the input for the decrypt method.
+# 
+
