@@ -1,3 +1,46 @@
 body {
-    background-color: red;
+  font-family: "Verdana";
+}
+
+header p {
+  background-color: #F0FFF0;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.column-1 {
+  display: inline-block;
+  width: 49%;
+  float: left;
+}
+
+.column-2 {
+  display: inline-block;
+  width: 49%;
+  float: right;
+}
+
+footer {
+  clear: both;
+  background-image: url("http://www.freeiconspng.com/uploads/github-logo-icon-30.png");
+  
+}
+
+h1 {
+  background-color: #8FBC8F;
+  color: #ffffff;
+  text-shadow: 2px black;
+  padding: 70px;
+  background-image: url("http://www.freeiconspng.com/uploads/github-logo-icon-30.png");
+  margin-bottom: 0;
+}
+
+
+
+summary {
+  background-color: #DCDCDC;
+}
+
+li {
+  list-style-type: square;
 }
