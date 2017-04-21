@@ -1,0 +1,53 @@
+ELEVATOR ALGORITHM
+
+- Search wall until "open elevator" button found.
+- Press "open elevator" button.
+- WAIT routine.
+- Enter opened elevator doors.
+- Search elevator interior for floor buttons panel.
+    * If floor button panel not located: HELP routine.
+- Locate desired floor button.
+    * If desired floor button not located: HELP routine
+- Press located floor buton.
+- Until elevator starts moving: WAIT routine.
+- Once elevator stops moving: WAIT routine.
+- Exit opened doors.
+
+- WAIT
+    * Start counter at 0 and increment every second.
+    * If counter >= 300: Go to HELP routine.
+
+- HELP -> call elevator repair number (555)555-HELP and await further instrucions.
+
+
+COOKING SOFT-BOILED EGGS ALGORITHM
+
+- Locate pot that holds under 1 gallon of water.
+- Place pot on top of stove above heating element.
+- Locate measuring "1 cup" measuring cup.
+- Fill cup with water from kitchen sink faucet.
+- Empty contents of cup into pot.
+- Repeat previous 2 steps 5 times.
+
+- Locate control for heating element and turn to highest setting.
+- Wait until water starts to boil rapidly.
+- Locate box of salt.
+- Locate teaspoon measuring cup.
+- Use teaspoon measuring cup to add a full teaspoon of salt to boiling water in pot.
+- 
+
+- Locate refrigerator.
+- Open refrigerator.
+- Locate carton of eggs.
+- Remove carton of eggs from refrigerator and place on nearest counter.
+- Open carton of eggs.
+- Locate egg pricker.
+- Remove 1 egg from carton and prick the wider end with egg pricker.
+- Put egg into water in pot.
+- Repeat previous two steps 3 times.
+
+- Wait 5 minutes.
+- Remove pot from heating element.
+- Empty at least 75% of hot water from pot.
+- Add cold water to pot from kitchen sink faucet.
+- Remove eggs from pot and eat promptly.
