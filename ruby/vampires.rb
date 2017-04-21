@@ -5,9 +5,9 @@ def interview
     counter = 0
     until counter == employees
         counter += 1
-    
+
         puts "What is your name?"
-        name = gets.chomp
+        interviewee_name = gets.chomp
         puts "How old are you?"
         age = gets.chomp.to_i
         puts "What year were you born?"
@@ -36,30 +36,40 @@ def interview
                 break
             end
         end
-        puts "Your name is #{name}."
+
+        puts "Do you have any allergies? You can enter as many as you like, then enter \"done\""
+        allergic_to_sunlight = false
+        allergies = []
+        loop do
+            input = gets.chomp
+            if input == "done"
+                break
+            elsif input == "sunshine"
+                allergies << input
+                allergic_to_sunlight = true
+                break
+            else
+                allergies << input
+            end
+        end
+    
+        puts "Your name is #{interviewee_name}."
         puts "You are #{age} years old."
         puts "You were born in #{year_of_birth}."
         puts "You want garlic bread: #{wants_garlic_bread}."
         puts "You would like to enroll in company health insurance: #{wants_health_insurance}"
-    
-        # puts "Do you have any allergies? You can enter as many as you like, then enter \"done\""
-        # allergies = []
-        # loop do
-        #     input = gets.chomp
-        #     if input == "done"
-        #         break
-        #     end
-        #     allergies << input
-        # end
-    
+        puts "You are allergic to #{allergies}."
+        
         age_verified = false
         if 2017 - year_of_birth == age || 2017 - year_of_birth == age + 1
             age_verified = true
         end
         puts "Age verified: #{age_verified}"
-    
+        
         result = ""
-        if age_verified && (wants_garlic_bread || wants_health_insurance)
+        if allergic_to_sunlight
+            result = "Probably a vampire."
+        elsif age_verified && (wants_garlic_bread || wants_health_insurance)
             result = "Probably not a vampire."
         end
         if !age_verified && (!wants_garlic_bread || !wants_health_insurance)
@@ -68,7 +78,7 @@ def interview
         if !age_verified && !wants_garlic_bread && !wants_health_insurance
             result = "Almost certainly a vampire."
         end
-        if name == "Drake Cula" || name == "Tu Fang"
+        if interviewee_name == "Drake Cula" || interviewee_name == "Tu Fang"
             result = "Definitely a vampire."
         end
         if result == ""
@@ -77,6 +87,8 @@ def interview
         
         puts result
     end
+
+    puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
 interview
