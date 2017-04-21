@@ -42,6 +42,16 @@ def interview
         puts "You want garlic bread: #{wants_garlic_bread}."
         puts "You would like to enroll in company health insurance: #{wants_health_insurance}"
     
+        # puts "Do you have any allergies? You can enter as many as you like, then enter \"done\""
+        # allergies = []
+        # loop do
+        #     input = gets.chomp
+        #     if input == "done"
+        #         break
+        #     end
+        #     allergies << input
+        # end
+    
         age_verified = false
         if 2017 - year_of_birth == age || 2017 - year_of_birth == age + 1
             age_verified = true
