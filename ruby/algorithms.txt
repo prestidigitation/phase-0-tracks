@@ -34,7 +34,6 @@ COOKING SOFT-BOILED EGGS ALGORITHM
 - Locate box of salt.
 - Locate teaspoon measuring cup.
 - Use teaspoon measuring cup to add a full teaspoon of salt to boiling water in pot.
-- 
 
 - Locate refrigerator.
 - Open refrigerator.
