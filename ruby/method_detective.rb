@@ -15,16 +15,22 @@
 "enhance".insert(0, "    ").insert(11, "    ")
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+"the usual".insert(9, " suspects")
+"the usual" << " suspects"
+"the usual".concat(" suspects")
+"the usual".ljust(18, " suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+" suspects".insert(0, "the usual")
+" suspects".rjust(18, "the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
+"The case of the disappearing last letter".chomp("r")
+"The case of the disappearing last letter".slice(0, 39)
 # => "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>
