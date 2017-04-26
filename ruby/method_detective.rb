@@ -4,13 +4,15 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+"iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+"zom".insert(1, "o")
 # => “zoom”
 
-# "enhance".<???>
+"enhance".center(15)
+"enhance".ljust(11).rjust(15)
+"enhance".insert(0, "    ").insert(11, "    ")
 # => "    enhance    "
 
 # "Stop! You’re under arrest!".<???>
@@ -37,3 +39,4 @@
 
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4
+
