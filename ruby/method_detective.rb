@@ -26,17 +26,22 @@
 
 " suspects".insert(0, "the usual")
 " suspects".rjust(18, "the usual")
+" suspects".prepend("the usual")
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
 "The case of the disappearing last letter".chomp("r")
 "The case of the disappearing last letter".slice(0, 39)
+"The case of the disappearing last letter"[0, 39]
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter".slice(1, 38)
+"The mystery of the missing first letter"[1, 38]
+"The mystery of the missing first letter"[0] = ""
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+"Elementary,    my   dear        Watson!".gsub(/\s+/, " ").strip
+"Elementary,    my   dear        Watson!".split(" ").join(" ")
 # => "Elementary, my dear Watson!"
 
 # "z".<???>
