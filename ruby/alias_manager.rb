@@ -17,3 +17,19 @@ end
 
 p name_swapper("Bob Henry")
 p name_swapper("Alexander Rowland")
+
+
+def encrypt(str)
+    vowels = "aeiou"
+    letter_array = []
+    encrypted_string = ""
+
+    str = str.split
+    letter_array += str[0].split("")
+    letter_array += str[1].split("")
+    letter_array.each do |letter|
+        encrypted_string += letter.next
+    end
+end
+
+p encrypt("Alexander Rowland")
