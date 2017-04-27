@@ -58,12 +58,19 @@ end
 # p encrypt("Felicia Torres")
 
 ### Driver Code
+encrypted_names = []
+
 loop do
     puts "Enter a name that you would like to encrypt (type 'quit' to exit): "
     input = gets.chomp
     if input == "quit"
         break
     else
-        puts encrypt(input)
+        encrypted_string = encrypt(input)
+        encrypted_names << encrypted_string
+        puts encrypted_string
     end
 end
+
+puts "\nEncrypted names: "
+puts encrypted_names
