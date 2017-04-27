@@ -51,8 +51,19 @@ def encrypt(str)
     shift(name_swapper(str))
 end
 
-p encrypt("Alexander Rowland")
-p encrypt("Roberto Gonzales")
-p encrypt("Carmen Sandiego")
-p encrypt("Uma Thurman")
-p encrypt("Felicia Torres")
+# p encrypt("Alexander Rowland")
+# p encrypt("Roberto Gonzales")
+# p encrypt("Carmen Sandiego")
+# p encrypt("Uma Thurman")
+# p encrypt("Felicia Torres")
+
+### Driver Code
+loop do
+    puts "Enter a name that you would like to encrypt (type 'quit' to exit): "
+    input = gets.chomp
+    if input == "quit"
+        break
+    else
+        puts encrypt(input)
+    end
+end
