@@ -32,10 +32,32 @@ cars_on_highway = {
         }
     },
     car_three: {
-
+        make: "Suzuki",
+        model: "Grand Vitara",
+        year: 2005,
+        seats: 5,
+        miles: 150000,
+        leased: false,
+        occupants: {
+            driver: "Tamika Daigre",
+            passengers: []
+        }
     },
     car_four: {
-
+        make: "BMW",
+        model: "3 Series",
+        year: 2014,
+        seats: 5,
+        miles: 100000,
+        leased: true,
+        occupants: {
+            driver: "Dian Beltrami",
+            passengers: [
+                "Hellen Redel",
+                "Evonne Allgeier",
+                "Ta Chadwell"
+            ]
+        }
     },
     car_five: {
 
@@ -47,3 +69,5 @@ cars_on_highway = {
 
 p cars_on_highway[:car_one][:make]
 p cars_on_highway[:car_two][:occupants][:passengers]
+p cars_on_highway[:car_three][:leased]
+p cars_on_highway[:car_four][:year]
