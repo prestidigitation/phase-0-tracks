@@ -8,3 +8,12 @@
 #    - If vowel, switch to next vowel.
 #    - If not vowel, switch to next consonant.
 #
+
+def name_swapper(str)
+    str = str.split()
+    str[0], str[1] = str[1], str[0]
+    str.join(" ")
+end
+
+p name_swapper("Bob Henry")
+p name_swapper("Alexander Rowland")
