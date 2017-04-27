@@ -20,16 +20,24 @@ p name_swapper("Alexander Rowland")
 
 
 def encrypt(str)
-    vowels = "aeiou"
+    vowels = "AEIOUaeiou"
     letter_array = []
     encrypted_string = ""
 
     str = str.split
     letter_array += str[0].split("")
+    letter_array += [" "]
     letter_array += str[1].split("")
     letter_array.each do |letter|
-        encrypted_string += letter.next
+        if vowels.include? letter
+            encrypted_string += vowels[vowels.index(letter) + 1]
+        elsif letter == " "
+            encrypted_string += " "
+        else
+            encrypted_string += letter.next
+        end
     end
+    encrypted_string
 end
 
 p encrypt("Alexander Rowland")
