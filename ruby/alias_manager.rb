@@ -9,35 +9,50 @@
 #    - If not vowel, switch to next consonant.
 #
 
-def name_swapper(str)
-    str = str.split()
-    str[0], str[1] = str[1], str[0]
-    str.join(" ")
-end
-
-p name_swapper("Bob Henry")
-p name_swapper("Alexander Rowland")
-
-
 def encrypt(str)
-    vowels = "AEIOUaeiou"
-    letter_array = []
-    encrypted_string = ""
 
-    str = str.split
-    letter_array += str[0].split("")
-    letter_array += [" "]
-    letter_array += str[1].split("")
-    letter_array.each do |letter|
-        if vowels.include? letter
-            encrypted_string += vowels[vowels.index(letter) + 1]
-        elsif letter == " "
-            encrypted_string += " "
-        else
-            encrypted_string += letter.next
-        end
+    def name_swapper(str)
+        str = str.split()
+        str[0], str[1] = str[1], str[0]
+        str.join(" ")
     end
-    encrypted_string
+
+    # p name_swapper("Bob Henry")
+    # p name_swapper("Alexander Rowland")
+
+
+    def shift(str)
+        cap_vowels = "AEIOUA"
+        lower_vowels = "aeioua"
+        cap_consonants = "BCDFGHJKLMNPQRSTVWXYZB"
+        lower_consonants = "bcdfghjklmnpqrstvwxyzb"
+        letter_array = []
+        shifted_string = ""
+
+        str = str.split
+        letter_array += str[0].split("")
+        letter_array += [" "]
+        letter_array += str[1].split("")
+        letter_array.each do |letter|
+            if cap_vowels.include? letter
+                shifted_string += cap_vowels[cap_vowels.index(letter) + 1]
+            elsif lower_vowels.include? letter
+                shifted_string += lower_vowels[lower_vowels.index(letter) + 1]
+            elsif cap_consonants.include? letter
+                shifted_string += cap_consonants[cap_consonants.index(letter) + 1]
+            elsif lower_consonants.include? letter
+                shifted_string += lower_consonants[lower_consonants.index(letter) + 1]
+            elsif letter == " "
+                shifted_string += " "
+            end
+        end
+        shifted_string
+    end
+    shift(name_swapper(str))
 end
 
 p encrypt("Alexander Rowland")
+p encrypt("Roberto Gonzales")
+p encrypt("Carmen Sandiego")
+p encrypt("Uma Thurman")
+p encrypt("Felicia Torres")
