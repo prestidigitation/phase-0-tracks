@@ -7,6 +7,25 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # printing each item in the array separated by an asterisk
 # ----
 
+array_size = zombie_apocalypse_supplies.length - 1
+counter = 0
+while counter <= array_size
+    if counter != array_size
+        print zombie_apocalypse_supplies[counter] + "*"
+    else
+        print zombie_apocalypse_supplies[counter]
+    end
+    counter += 1
+end
+
+# zombie_apocalypse_supplies.each do |supply|
+#     if supply.next == nil
+#         p supply
+#     else
+#         p supply + "*"
+#     end
+# end
+
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
