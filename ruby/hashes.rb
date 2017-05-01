@@ -34,5 +34,17 @@ client_info.each do |k, v|
     puts "#{k}: #{v}"
 end
 
-puts "Do you see anything that you would like to change?"
-client_info[]
+puts "If you want to change anything, type the name of category or \"none\" if everything looks good."
+input = ""
+loop do
+  input = gets.chomp
+  if input == "none"
+    break
+  end
+  puts "Enter the new value:"
+  client_info[input.to_sym] = gets.chomp
+end
+
+client_info.each do |k, v|
+    puts "#{k}: #{v}"
+end
