@@ -39,18 +39,28 @@
 
 
 client_info = {}
-
-p "Enter your name:"
+puts "Enter your name:"
 client_info[:client_name] = gets.chomp
-p "Enter your age:"
+puts "Enter your age:"
 client_info[:age] = gets.chomp.to_i
-p "Enter your email:"
+puts "Enter number of children:"
+client_info[:number_of_children] = gets.chomp.to_i
+puts "Enter the names of other immediate family members (type \"done\" when finished):"
+client_info[:family_member_list] = []
+loop do
+  input = gets.chomp
+  if input == "done"
+    break
+  end
+  client_info[:family_member_list] << input
+end
+puts "Enter your email:"
 client_info[:email] = gets.chomp
-p "Enter your phone number"
+puts "Enter your phone number"
 client_info[:phone_number] = gets.chomp
 input = ""
 until input == "y" || input == "n"
-  p "Are you married (y/n)?"
+  puts "Are you married (y/n)?"
   input = gets.chomp.downcase
 end
 if input == "y"
@@ -58,9 +68,7 @@ if input == "y"
 else
   client_info[:married] = false
 end
-p "Enter number of children:"
-client_info[:number_of_children] = gets.chomp.to_i
-p "What is your preferred interior design style?"
+puts "What is your preferred interior design style?"
 client_info[:design_style] = gets.chomp
 
 client_info.each do |k, v|
@@ -76,10 +84,32 @@ loop do
     break
   end
   input_key = input_key.to_sym
-  puts "Enter the new value:"
-  input_value = gets.chomp
+  if input_key != :family_member_list
+    puts "Enter the new value:"
+    input_value = gets.chomp
+  end
+
   if input_key == :age || input_key == :number_of_children
     client_info[input_key] = input_value.to_i
+  elsif input_key == :family_member_list
+    client_info[:family_member_list].each do |item|
+      input = ""
+      puts "Would you like to remove #{item} from the list (y/n)?"
+      remove = gets.chomp
+      if remove == "y"
+        client_info[:family_member_list].delete(item)
+      end
+    end
+    loop do
+      input = ""
+      puts "Would you like to add a family member to the list (y/n)?"
+      input = gets.chomp
+      if input == "n"
+        break
+      end
+      puts "Enter a name:"
+      client_info[:family_member_list] << gets.chomp
+    end
   elsif input_key == :married
     if input_value == "y"
       client_info[:married] = true
