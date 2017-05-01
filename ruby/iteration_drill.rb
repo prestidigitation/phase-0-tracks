@@ -87,7 +87,14 @@ end
 # the year 2000. Do not use any special built-in methods.
 # ----
 
-
+temp_hash = {}
+extinct_animals.each do |key, value|
+  if value < 2000
+    temp_hash[key] = value
+  end
+end
+extinct_animals = temp_hash
+p extinct_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
