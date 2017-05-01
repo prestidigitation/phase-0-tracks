@@ -25,24 +25,40 @@ if input == "y"
 else
   client_info[:married] = false
 end
+
 p "Enter number of children:"
 client_info[:number_of_children] = gets.chomp.to_i
 p "What is your preferred interior design style?"
 client_info[:design_style] = gets.chomp
 
 client_info.each do |k, v|
-    puts "#{k}: #{v}"
+  puts "#{k}: #{v}"
 end
 
-puts "If you want to change anything, type the name of category or \"none\" if everything looks good."
-input = ""
+input_key = ""
+input_value = ""
 loop do
-  input = gets.chomp
-  if input == "none"
+  puts "If you want to change anything, type the name of category or \"none\" if everything looks good."
+  input_key = gets.chomp
+  if input_key == "none"
     break
   end
+  input_key = input_key.to_sym
   puts "Enter the new value:"
-  client_info[input.to_sym] = gets.chomp
+  input_value = gets.chomp
+  if input_key == "age" || input_key == "number_of_children"
+    client_info[input_key] = input_value.to_i
+  elsif input_key == "married"
+    if input_value == "y"
+      client_info[:married] = true
+    elsif
+      client_info[:married] = false
+    else
+      client_info[:married] = nil
+    end
+  else
+    client_info[input_key] = input_value
+  end
 end
 
 client_info.each do |k, v|
