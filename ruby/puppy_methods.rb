@@ -31,13 +31,20 @@ class Puppy
   end
 end
 
-# class Kitten
+class Kitten
 
-#   def initialize(name)
-#     puts "Initializing new kitten instance ..."
-#     @kitten_name = name
-#   end
-# end
+  def initialize
+    puts "Initializing new kitten instance ..."
+  end
+
+  def meow
+    puts "MEOW!!!"
+  end
+
+  def scratch
+    puts "Kitty scratches your face."
+  end
+end
 
 # kitten_array = [
 #   "Wheeler",
@@ -61,6 +68,16 @@ p scruffy.roll_over
 p scruffy.dog_years(5)
 p scruffy.dog_paw
 
-# kitten_array.each do |kitty_var, kitty_name|
-#   kitty_var = Kitten.new(kitty_name)
-# end
+kitten_instance_array = []
+
+counter = 0
+until counter == 50
+  counter += 1
+  kitten_instance_array << Kitten.new()
+end
+
+fluffy = Kitten.new
+fluffy.meow
+fluffy.scratch
+
+p kitten_instance_array
