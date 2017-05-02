@@ -104,7 +104,6 @@ extinct_animals = temp_hash
 extinct_animals.each do |key, value|
   extinct_animals[key] = value - 3
 end
-p extinct_animals
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -113,6 +112,22 @@ p extinct_animals
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 # ----
+
+has_cat = false
+has_dodo = false
+has_antelope = false
+extinct_animals.each do |key, value|
+  if key == "Andean Cat"
+    has_cat = true
+  elsif key == "Dodo"
+    has_dodo = true
+  elsif key == "Saiga Antelope"
+    has_antelope = true
+  end
+end
+puts "The Andean Cat is extinct: #{has_cat}."
+puts "The Dodo is extinct: #{has_dodo}."
+puts "The Saiga Antelope is extinct: #{has_antelope}."
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
