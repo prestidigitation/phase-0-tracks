@@ -94,13 +94,17 @@ extinct_animals.each do |key, value|
   end
 end
 extinct_animals = temp_hash
-p extinct_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
 # ----
+
+extinct_animals.each do |key, value|
+  extinct_animals[key] = value - 3
+end
+p extinct_animals
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
