@@ -134,3 +134,6 @@ puts "The Saiga Antelope is extinct: #{has_antelope}."
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+
+pigeon_data = extinct_animals.delete("Passenger Pigeon").to_a
+pigeon_data = ["Passenger Pigeon", value]
