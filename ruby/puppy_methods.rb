@@ -46,19 +46,6 @@ class Kitten
   end
 end
 
-# kitten_array = [
-#   "Wheeler",
-#   "Harlan",
-#   "Mullo",
-#   "Brinley",
-#   "Alonzo",
-#   "Sigebryht",
-#   "Sapphire",
-#   "Teeters",
-#   "Xander",
-#   "August"
-# ]
-
 #Driver Code
 
 scruffy = Puppy.new
@@ -70,14 +57,17 @@ p scruffy.dog_paw
 
 kitten_instance_array = []
 
+fluffy = Kitten.new
+fluffy.meow
+fluffy.scratch
+
 counter = 0
 until counter == 50
   counter += 1
   kitten_instance_array << Kitten.new()
 end
 
-fluffy = Kitten.new
-fluffy.meow
-fluffy.scratch
-
-p kitten_instance_array
+kitten_instance_array.each do |kitty|
+  kitty.meow
+  kitty.scratch
+end
