@@ -80,6 +80,9 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 # ----
 
+new_supplies_list = zombie_apocalypse_supplies | other_survivor_supplies
+p new_supplies_list
+
 # Hash Drills
 
 extinct_animals = {
