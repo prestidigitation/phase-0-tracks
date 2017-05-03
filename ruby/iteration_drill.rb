@@ -59,6 +59,18 @@ p search_array_for_item(zombie_apocalypse_supplies, "pistol")
 # leaving only 5. Do not use any special built-in methods.
 # ----
 
+def pare_down_supplies(array)
+  new_array = []
+  counter = 0
+  while counter < 5
+    new_array << array[counter]
+    counter += 1
+  end
+  new_array
+end
+
+p pare_down_supplies(zombie_apocalypse_supplies)
+
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
 # and their supplies below. You should get rid of any duplicate items.
