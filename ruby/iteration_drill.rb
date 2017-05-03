@@ -7,17 +7,6 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # printing each item in the array separated by an asterisk
 # ----
 
-# array_size = zombie_apocalypse_supplies.length - 1
-# counter = 0
-# while counter <= array_size
-#     if counter != array_size
-#         print zombie_apocalypse_supplies[counter] + "*"
-#     else
-#         print zombie_apocalypse_supplies[counter]
-#     end
-#     counter += 1
-# end
-
 zombie_apocalypse_supplies.each do |item|
   print item + "*"
 end
@@ -25,28 +14,6 @@ end
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
-
-# alphabetized_supplies = []
-# counter = 0
-# counter_2 = 0
-# while counter <= array_size
-#     swapped = false
-#     counter_2 = array_size - counter
-#     while counter_2 >= array_size
-#         if zombie_apocalypse_supplies[counter][0] < zombie_apocalypse_supplies[counter_2][0]
-#             zombie_apocalypse_supplies[counter], zombie_apocalypse_supplies[counter_2] = 
-#             zombie_apocalypse_supplies[counter_2], zombie_apocalypse_supplies[counter]
-#             swapped = true
-#         end
-#         counter_2 -= 1
-#     end
-#     if !swapped
-#         break
-#     end
-#     counter += 1
-# end
-#
-# puts zombie_apocalypse_supplies
 
 def bubble_sort(array)
   n = array.length
@@ -72,6 +39,20 @@ p bubble_sort(zombie_apocalypse_supplies)
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
 # ----
+
+def search_array_for_item(array, sought_item)
+  found = false
+  array.each do |item|
+    if item == sought_item
+      found = true
+      break
+    end
+  end
+  found
+end
+
+p search_array_for_item(zombie_apocalypse_supplies, "rations")
+p search_array_for_item(zombie_apocalypse_supplies, "pistol")
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
