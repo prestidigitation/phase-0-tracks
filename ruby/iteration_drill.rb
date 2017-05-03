@@ -7,42 +7,66 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # printing each item in the array separated by an asterisk
 # ----
 
-array_size = zombie_apocalypse_supplies.length - 1
-counter = 0
-while counter <= array_size
-    if counter != array_size
-        print zombie_apocalypse_supplies[counter] + "*"
-    else
-        print zombie_apocalypse_supplies[counter]
-    end
-    counter += 1
+# array_size = zombie_apocalypse_supplies.length - 1
+# counter = 0
+# while counter <= array_size
+#     if counter != array_size
+#         print zombie_apocalypse_supplies[counter] + "*"
+#     else
+#         print zombie_apocalypse_supplies[counter]
+#     end
+#     counter += 1
+# end
+
+zombie_apocalypse_supplies.each do |item|
+  print item + "*"
 end
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
 
-alphabetized_supplies = []
-counter = 0
-counter_2 = 0
-while counter <= array_size
+# alphabetized_supplies = []
+# counter = 0
+# counter_2 = 0
+# while counter <= array_size
+#     swapped = false
+#     counter_2 = array_size - counter
+#     while counter_2 >= array_size
+#         if zombie_apocalypse_supplies[counter][0] < zombie_apocalypse_supplies[counter_2][0]
+#             zombie_apocalypse_supplies[counter], zombie_apocalypse_supplies[counter_2] = 
+#             zombie_apocalypse_supplies[counter_2], zombie_apocalypse_supplies[counter]
+#             swapped = true
+#         end
+#         counter_2 -= 1
+#     end
+#     if !swapped
+#         break
+#     end
+#     counter += 1
+# end
+#
+# puts zombie_apocalypse_supplies
+
+def bubble_sort(array)
+  n = array.length
+  loop do
     swapped = false
-    counter_2 = array_size - counter
-    while counter_2 >= array_size
-        if zombie_apocalypse_supplies[counter][0] < zombie_apocalypse_supplies[counter_2][0]
-            zombie_apocalypse_supplies[counter], zombie_apocalypse_supplies[counter_2] = 
-            zombie_apocalypse_supplies[counter_2], zombie_apocalypse_supplies[counter]
-            swapped = true
-        end
-        counter_2 -= 1
+
+    (n - 1).times do |i|
+      if array[i].downcase > array[i + 1].downcase
+        array[i], array[i + 1] = array[i + 1], array[i]
+        swapped = true
+      end
     end
-    if !swapped
-        break
-    end
-    counter += 1
+
+    break if not swapped
+  end
+
+  array
 end
 
-puts zombie_apocalypse_supplies
+p bubble_sort(zombie_apocalypse_supplies)
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
