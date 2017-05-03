@@ -53,15 +53,28 @@ end
   # update value of matching key to new quantity
 # output: updated list
 
-# Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+def update_item_quantity(grocery_list, item_name, new_quantity)
+  grocery_list[item_name] = new_quantity
+  grocery_list
+end
 
-# grocery list should be array
+# Method to print a list and make it look pretty
+# input: list
+# steps:
+  # iterate through list using loop
+    # print out "Need to purchase {value} of {key}."
+# output: a series of strings
+
+def print_list(grocery_list)
+  grocery_list.each do |item, quantity|
+    puts "Need to purchase #{quantity} of #{item}."
+  end
+end
 
 # TEST CODE
 
 test_list = create_a_list("carrots apples cereal pizza")
 puts add_item_to_list(test_list, "banana")
 puts remove_item_from_list(test_list, "cereal")
+puts update_item_quantity(test_list, "apples", 53)
+print_list(test_list)
