@@ -35,14 +35,23 @@ def add_item_to_list(grocery_list, item_name, optional_quantity = 1)
 end
 
 # Method to remove an item from the list
-# input:
+# input: list, item name to be removed
 # steps:
-# output:
+  # search list for key matching item name
+  # if key matches item name, delete it
+# output: return updated list
+
+def remove_item_from_list(grocery_list, item_name)
+  grocery_list.delete(item_name)
+  grocery_list
+end
 
 # Method to update the quantity of an item
-# input:
+# input: list, item name, new quantity
 # steps:
-# output:
+  # search list for key matching item name
+  # update value of matching key to new quantity
+# output: updated list
 
 # Method to print a list and make it look pretty
 # input:
@@ -52,5 +61,7 @@ end
 # grocery list should be array
 
 # TEST CODE
-puts add_item_to_list(create_a_list("carrots apples cereal pizza"), "banana")
 
+test_list = create_a_list("carrots apples cereal pizza")
+puts add_item_to_list(test_list, "banana")
+puts remove_item_from_list(test_list, "cereal")
