@@ -135,5 +135,7 @@ puts "The Saiga Antelope is extinct: #{has_antelope}."
 # for Hashes.
 # ----
 
-pigeon_data = extinct_animals.delete("Passenger Pigeon").to_a
-pigeon_data = ["Passenger Pigeon", value]
+pigeon_data = extinct_animals.assoc("Passenger Pigeon")
+extinct_animals.delete(pigeon_data[0])
+p pigeon_data
+p extinct_animals
