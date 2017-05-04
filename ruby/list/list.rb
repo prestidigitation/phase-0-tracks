@@ -12,4 +12,9 @@ class TodoList
     @array << item
   end
 
+  def delete_item(item)
+    @array.delete(item)
+    @array
+  end
+
 end
