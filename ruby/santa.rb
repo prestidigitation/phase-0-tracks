@@ -46,7 +46,6 @@ p test_santa.ethnicity
 #   Set age of new Santa instance to a random number between 0 and 140
 #   Call all attributes of Santa instance
 
-santa_array = []
 gender_array = [
   "Agender / genderless",
   "Androgyne Bigender",
