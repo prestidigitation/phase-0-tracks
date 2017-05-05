@@ -44,7 +44,7 @@ p test_santa.ethnicity
 # Loop X number of times
 #   Initialize new instance of Santa class with random item from gender_array, santa_instance_array
 #   Set age of new Santa instance to a random number between 0 and 140
-#   Call all attributes of santa instance
+#   Call all attributes of Santa instance
 
 santa_array = []
 gender_array = [
@@ -83,7 +83,7 @@ ethnicity_array = [
   "Uyghur"
 ]
 
-1000000.times do |i|
+1000000.times do
   little_santa = Santa.new(gender_array.sample, ethnicity_array.sample)
   little_santa.age = rand(141)
   p little_santa.ethnicity
