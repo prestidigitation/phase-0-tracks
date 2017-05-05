@@ -17,9 +17,29 @@ class Santa
     puts "That was a good #{cookie}!"
   end
 
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking << reindeer_ranking.delete(reindeer_name)
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
 end
 
-# test_santa = Santa.new("male", "white")
+test_santa = Santa.new("male", "white")
 # test_santa.speak
 # test_santa.eat_milk_and_cookies("oreo")
 
@@ -40,7 +60,7 @@ end
 # p santa_array[6].ethnicity
 
 ### PSEUDOCODE
-# Initialize empty array to store Santa class instances in
+# Initialize empty array to store Santa class instances
 # Initialize gender array with gender identities stored as strings
 # Initialize ethnicity array with ethnicities stored as strings
 # Loop X number of times
@@ -69,7 +89,7 @@ ethnicity_array = [
   "Zulu",
   "Czech",
   "Japanese",
-  "Georgians",
+  "Georgian",
   "Icelander",
   "Hindustani",
   "Javanese",
@@ -87,3 +107,9 @@ ethnicity_array = [
   santa_array << Santa.new(gender_array.sample, ethnicity_array.sample)
 end
 p santa_array
+
+p test_santa.celebrate_birthday
+p test_santa.get_mad_at("Rudolph")
+p test_santa.gender = "carrotkin"
+p test_santa.age
+p test_santa.ethnicity
