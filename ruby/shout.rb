@@ -7,3 +7,9 @@ module Shout
     words + "!!!" + " :)"
   end
 end
+
+
+### Driver code
+
+p Shout.yell_angrily("Bob Saget")
+p Shout.yelling_happily("It's my birthday")
