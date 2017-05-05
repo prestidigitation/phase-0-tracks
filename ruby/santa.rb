@@ -1,7 +1,7 @@
 class Santa
 
-  attr_reader :ethnicity, :reindeer_ranking, :age
-  attr_accessor :gender
+  attr_reader :ethnicity, :reindeer_ranking
+  attr_accessor :gender, :age
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
     @gender = gender
@@ -28,32 +28,23 @@ class Santa
 
 end
 
+### DRIVER CODE
+
 test_santa = Santa.new("male", "white")
-# test_santa.speak
-# test_santa.eat_milk_and_cookies("oreo")
+p test_santa.celebrate_birthday
+p test_santa.get_mad_at("Rudolph")
+p test_santa.gender = "carrotkin"
+p test_santa.age
+p test_santa.ethnicity
 
-# santa_array = []
-# santa_array << Santa.new("agender", "black")
-# p santa_array[0].ethnicity
-# santa_array << Santa.new("female", "Latino")
-# p santa_array[1].ethnicity
-# santa_array << Santa.new("bigender", "white")
-# p santa_array[2].ethnicity
-# santa_array << Santa.new("male", "Japanese")
-# p santa_array[3].ethnicity
-# santa_array << Santa.new("female", "prefer not to say")
-# p santa_array[4].ethnicity
-# santa_array << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-# p santa_array[5].ethnicity
-# santa_array << Santa.new("N/A", "N/A")
-# p santa_array[6].ethnicity
-
-### PSEUDOCODE
+# Pseudocode
 # Initialize empty array to store Santa class instances
 # Initialize gender array with gender identities stored as strings
 # Initialize ethnicity array with ethnicities stored as strings
 # Loop X number of times
-#   Add random item from both gender_array and ethnicity_array to santa_instance_array
+#   Initialize new instance of Santa class with random item from gender_array, santa_instance_array
+#   Set age of new Santa instance to a random number between 0 and 140
+#   Call all attributes of santa instance
 
 santa_array = []
 gender_array = [
@@ -92,13 +83,11 @@ ethnicity_array = [
   "Uyghur"
 ]
 
-20.times do 
-  santa_array << Santa.new(gender_array.sample, ethnicity_array.sample)
+1000000.times do |i|
+  little_santa = Santa.new(gender_array.sample, ethnicity_array.sample)
+  little_santa.age = rand(141)
+  p little_santa.ethnicity
+  p little_santa.gender
+  p little_santa.age
+  p little_santa.reindeer_ranking
 end
-p santa_array
-
-p test_santa.celebrate_birthday
-p test_santa.get_mad_at("Rudolph")
-p test_santa.gender = "carrotkin"
-p test_santa.age
-p test_santa.ethnicity
