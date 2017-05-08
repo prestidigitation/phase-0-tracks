@@ -11,7 +11,7 @@
 # 
 
 class GuessingGame
-  attr_reader :revealed_letters
+  attr_accessor :revealed_letters
 
   def initialize(word_to_guess)
     @word_to_guess = word_to_guess
@@ -19,7 +19,18 @@ class GuessingGame
     @revealed_letters = Array.new(@word_to_guess.length) { "-" }
   end
 
+  def search_for_letter(letter)
+    @word_to_guess.length.times do |i|
+      if @word_to_guess[i] == letter
+        @revealed_letters[i] = letter
+      end
+    end
+  end 
+
 end
 
 test_game = GuessingGame.new("Hello")
+p test_game.revealed_letters
+
+test_game.search_for_letter("l")
 p test_game.revealed_letters
