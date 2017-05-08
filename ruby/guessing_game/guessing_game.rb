@@ -1,7 +1,7 @@
 ### PSEUDOCODE ###
 # 
 # Prompt user_one to input a word or phrase to guess
-# Initialize guessed_correctly variable to keep track of overall game state
+# Initialize won_game variable to keep track of overall game state
 # Initialize revealed_letters array of "-" characters equal to length of input word
 # Initialize maximum_guesses variable equal to the length of input word
 # Initialize guess_number variable to store number of guesses user_two has made
@@ -14,10 +14,10 @@
 # Tell user they have lost if guess_number >= maximum_guesses
 
 class GuessingGame
-  attr_reader :guessed_correctly, :guess_number, :maximum_guesses, :revealed_letters, :guessed_letters, :guessed_words
+  attr_reader :won_game, :guess_number, :maximum_guesses, :revealed_letters, :guessed_letters, :guessed_words
 
   def initialize(target_word)
-    @guessed_correctly = false
+    @won_game = false
     @target_word = target_word
     @guess_number = 0
     @maximum_guesses = @target_word.length
@@ -44,22 +44,20 @@ class GuessingGame
       end
     end
 
-    puts "Guessed letters: #{@guessed_letters}"
-
     if letter_found
       if !@revealed_letters.include?("-")
-        @guessed_correctly = true
+        @won_game = true
       end
       return @revealed_letters
     else
-      puts "I'm sorry, but your letter wasn't found"
+      puts "I'm sorry, but your letter wasn't found."
       @revealed_letters
     end
   end
 
 
-  # Takes a word string as an input and returns @guessed_correctly boolean
-  def guess_word(word)
+  # Takes a word string as an input and returns @won_game boolean
+  def guess_a_word(word)
     # Repeated guesses don't count against the user
     if !guessed_words.include?(word)
       @guess_number += 1
@@ -67,24 +65,30 @@ class GuessingGame
     end
 
     if word == @target_word
-      @guessed_correctly = true
+      @won_game = true
     end
-
-    puts "Guessed words: #{@guessed_words}"
     
-    @guessed_correctly
+    @won_game
   end
 end
 
 
 ### DRIVER CODE ###
 # Prompt user_one to enter a word that must be composed of English letters, no characters
+def input_correct?(input)
+  correct = true
+  if /^[a-zA-Z]+$/.match(input) == nil
+    puts "Only English letters are allowed, no special/foreign characters or spaces!"
+    correct = false
+  end
+  correct
+end
+
 input = ""
 loop do
   puts "Player \#1, please enter a word for player \#2 to guess:"
   input = gets.chomp.downcase
-  if /^[a-zA-Z]+$/.match(input) == nil
-    puts "Only English letters are allowed, no characters or foreign words!"
+  if !input_correct?(input)
     next
   end
   break
@@ -92,25 +96,49 @@ end
 
 game = GuessingGame.new(input)
 
-while !game.guessed_correctly && game.guess_number <= game.maximum_guesses
+while !game.won_game && game.guess_number < game.maximum_guesses
   p game.revealed_letters
-  puts "Would you like to guess a letter or the entire word (l/w)?"
   loop do
+    puts 
+    puts "Guessed letters: #{game.guessed_letters}"
+    puts "Guessed words: #{game.guessed_words}"
+    puts "Would you like to guess a letter or the entire word (l/w)?"
+    puts "Guesses left: #{game.maximum_guesses - game.guess_number}"
     input = gets.chomp.downcase
     if input == "l"
-      puts "Enter a letter to guess:"
-      game.guess_a_letter(gets.chomp.downcase)
-      break
+      letter_input = ""
+      loop do
+        puts "Enter a letter to guess:"
+        letter_input = gets.chomp.downcase
+        if !input_correct?(letter_input)
+          next
+        elsif letter_input.length != 1
+          puts "You are only supposed to enter one letter!"
+          next
+        end
+        break
+      end
+      game.guess_a_letter(letter_input)
     elsif input == "w"
-      puts "Enter a word to guess:"
-      game.guess_word(gets.chomp.downcase)
-      break
+      word_input = ""
+      loop do
+        puts "Enter a word to guess:"
+        word_input = gets.chomp.downcase
+        if !input_correct?(word_input)
+          next
+        end
+        break
+      end
+      game.guess_a_word(gets.chomp.downcase)
     end
   end
 end
 
-if game.guessed_correctly
+if game.won_game
   puts "Congratulations! You won the game!"
 else
+  if game.guess_number >= game.maximum_guesses
+    puts "You ran out of guesses!"
+  end
   puts "You lost! You are a terrible player!"
 end
