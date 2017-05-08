@@ -5,6 +5,7 @@
 # Initialize revealed_letters array of "-" characters equal to length of input word
 # Initialize maximum_guesses variable equal to the length of input word
 # Initialize guess_number variable to store number of guesses user_two has made
+# Initialize guessed_letters hash to make sure repeat guesses don't count
 # WHILE guess_correctly is false and guess_number is less than maximum_guesses 
 #   Prompt user for letter to input or to guess the entire word
 #   Iterate through revealed_letters array, replacing dashes with respective input letter (requires comparing revealed_letters to the original input word)
@@ -21,9 +22,11 @@ class GuessingGame
     @guess_number = 0
     @maximum_guesses = @target_word.length / 2
     @revealed_letters = Array.new(@target_word.length) { "-" }
+    @guessed_letters = []
   end
 
-  def search_for_letter(letter)
+  def guess_a_letter(letter)
+    # if guessed_letters
     @guess_number += 1
     letter_found = false
     @target_word.length.times do |i|
@@ -49,6 +52,7 @@ class GuessingGame
 
 end
 
+
 ### DRIVER CODE ###
 puts "Player \#1, please enter a word for player \#2 to guess:"
 input = gets.chomp.downcase
@@ -60,7 +64,7 @@ while !game.guessed_correctly && game.guess_number <= game.maximum_guesses
     input = gets.chomp.downcase
     if input == "l"
       puts "Enter a letter to guess:"
-      game.search_for_letter(gets.chomp.downcase)
+      game.guess_a_letter(gets.chomp.downcase)
       break
     elsif input == "w"
       puts "Enter a word to guess:"
