@@ -13,10 +13,17 @@ describe GuessingGame do
     expect(@test_game.guess_a_letter("a")).to eq(["a", "a", "-", "-", "-", "a", "-", "-"])
   end
 
+  it "Should find all occurrences of letter \"v\" in aardvark" do
+    expect(@test_game.guess_a_letter("v")).to eq(["a", "a", "-", "-", "v", "a", "-", "-"])
+  end
+
+  it "Should find all occurrences of letter \"r\" in aardvark" do
+    expect(@test_game.guess_a_letter("r")).to eq(["a", "a", "r", "-", "v", "a", "r", "-"])
+  end
+
   it "Should say that letter wasn't found" do
     expect(@test_game.guess_a_letter("b")).to eq("I'm sorry, but your letter wasn't found")
   end
-
 
 # guess_word tests, method returns true or false
   it "Should say that guessed word is true" do
