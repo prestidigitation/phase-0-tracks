@@ -13,4 +13,20 @@ describe GuessingGame do
     expect(@test_game.search_for_letter("a")).to eq(["a", "a", "-", "-", "a", "-", "-"])
   end
 
+  it "Should say that letter wasn't found" do
+    expect(@test_game.search_for_letter("b")).to eq("I'm sorry, but your letter wasn't found")
+  end
+
+  it "Should say that guessed word is true" do
+    expect(@test_game.guess_word("aadvark")).to eq(true)
+  end
+
+  it "Should say that guessed word is false" do
+    expect(@test_game.guess_word("quizzed")).to eq(false)
+  end
+
+  it "Should say that guessed word is true" do
+    expect(GuessingGame.new("schadenfreude").guess_word("schadenfreude")).to eq(true)
+  end
+
 end
