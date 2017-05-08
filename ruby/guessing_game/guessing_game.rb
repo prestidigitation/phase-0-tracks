@@ -96,49 +96,47 @@ end
 
 game = GuessingGame.new(input)
 
-while !game.won_game && game.guess_number < game.maximum_guesses
+# Loop for user_two to provide input
+loop do
   p game.revealed_letters
-  loop do
-    puts 
-    puts "Guessed letters: #{game.guessed_letters}"
-    puts "Guessed words: #{game.guessed_words}"
-    puts "Would you like to guess a letter or the entire word (l/w)?"
-    puts "Guesses left: #{game.maximum_guesses - game.guess_number}"
-    input = gets.chomp.downcase
-    if input == "l"
-      letter_input = ""
-      loop do
-        puts "Enter a letter to guess:"
-        letter_input = gets.chomp.downcase
-        if !input_correct?(letter_input)
-          next
-        elsif letter_input.length != 1
-          puts "You are only supposed to enter one letter!"
-          next
-        end
-        break
+  puts "Guessed letters: #{game.guessed_letters}"
+  puts "Guessed words: #{game.guessed_words}"
+  puts "Would you like to guess a letter or the entire word (l/w)?"
+  puts "Guesses left: #{game.maximum_guesses - game.guess_number}"
+  input = gets.chomp.downcase
+  if input == "l"
+    letter_input = ""
+    loop do
+      puts "Enter a letter to guess:"
+      letter_input = gets.chomp.downcase
+      if !input_correct?(letter_input)
+        next
+      elsif letter_input.length != 1
+        puts "You are supposed to enter one letter!"
+        next
       end
-      game.guess_a_letter(letter_input)
-    elsif input == "w"
-      word_input = ""
-      loop do
-        puts "Enter a word to guess:"
-        word_input = gets.chomp.downcase
-        if !input_correct?(word_input)
-          next
-        end
-        break
-      end
-      game.guess_a_word(gets.chomp.downcase)
+      break
     end
+    game.guess_a_letter(letter_input)
+  elsif input == "w"
+    word_input = ""
+    loop do
+      puts "Enter a word to guess:"
+      word_input = gets.chomp.downcase
+      if !input_correct?(word_input)
+        next
+      end
+      break
+    end
+    game.guess_a_word(word_input)
   end
-end
 
-if game.won_game
-  puts "Congratulations! You won the game!"
-else
-  if game.guess_number >= game.maximum_guesses
+  if game.won_game
+    puts "Congratulations! You won the game!"
+    break
+  elsif game.guess_number >= game.maximum_guesses
     puts "You ran out of guesses!"
+    puts "You lost! You are a terrible player!"
+    break
   end
-  puts "You lost! You are a terrible player!"
 end
