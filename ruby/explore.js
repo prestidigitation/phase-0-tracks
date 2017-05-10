@@ -15,3 +15,7 @@ function reverse(string) {
 
 test_string = "buckaw";
 reversed_test_string = reverse(test_string);
+
+if (7 != 9) {
+  console.log(reversed_test_string);  
+}
