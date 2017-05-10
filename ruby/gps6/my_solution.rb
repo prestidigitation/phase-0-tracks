@@ -22,7 +22,7 @@ class VirusPredictor
     speed = speed_of_spread
 
     "#{@state} will lose #{number_of_deaths} people in this outbreak and will spread across the state in #{speed} months.\n\n"
-  end  
+  end
 
   private
 
@@ -89,4 +89,12 @@ end
 #=======================================================================
 # Reflection Section
 
+# The top-level key/value pairs of the hash are defined using the implicit form, a.k.a. the hashrocket =>, and use strings as the keys. The nested hashes are using an alternative syntax that uses symbols as keys.
+
 # require_relative imports code from another file, making accessible from the calling file. It's different from require in that it looks for the file in the same directory as the calling file, rather than looking through the ruby path, or needing an absolute file path.
+
+# There are three main ways of iterating over a hash: using the methods each, each_key, and each_value. These methods are followed by a block that executes for every single item returned by the respect method, either every key/value pair, each key, or each value.
+
+# The variables being used as parameters for the virus_effects method weren't necessary. After refactoring and eliminating unnecessary/unused parameters, it becomes clear that virus_effects is calling two other methods, each of which is directly changing instance variables rather than using variables passed in as arguments to the methods. When the only thing being mutated are instance variables that are defined in the initialize method, then parameters asking for such variables become superfluous.
+
+# The concept I most solidified in this challenge was paying attention to whether parameters for a method are still needed after altering other parts of a method, such as calling instance variables instead of variables. The other concept that was driven home to me was the implicit return value being the LAST expression evaluated in a method, so if you have an if/elsif/else block, then a given branch will implicitly return a value if it is the last one to execute.
