@@ -26,9 +26,24 @@ console.log(longestPhrase(testArrayTwo));
 // PSEUDOCODE for Release #1
 //
 // Define function that takes two objects as inputs
-// Initialize shared_key_value variable set to false
+// Initialize shared_key_value_found variable set to false
 // Loop through each key/value pair in first object
 //     Compare current key/value pair to every other key/value pair in second object
 //         If first key/value equals second key/value, update shared_key_value to true
-// Return shared_key_value
+// Return shared_key_value_found
 
+function sharedKeyValue(object_one, object_two) {
+    shared_key_value_found = false;
+    for (var key_one in object_one) {
+        for (var key_two in object_two) {
+            if (key_one === key_two && object_one[key_one] === object_two[key_two])
+              shared_key_value_found = true;
+        }
+    }
+    return shared_key_value_found;
+}
+
+console.log(sharedKeyValue({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(sharedKeyValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));
+console.log(sharedKeyValue({num_one: 12, num_two: 13, num_three: 14}, {num_four: 15, num_five: 16, num_two: 17, num_one: 18}));
+console.log(sharedKeyValue({car_make: "Honda", model: "Civic", year: 1991}, {car_make: "Honda", model: "Accord"}));
