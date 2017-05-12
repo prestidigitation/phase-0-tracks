@@ -1,3 +1,5 @@
+// PSUEDOCODE for Release #0
+//
 // Define function that takes an array as input
 // Initialize longest_phrase variable to store longest item from input array
 // Loop through each item in input array
@@ -19,3 +21,14 @@ console.log(longestPhrase(testArrayOne));
 
 testArrayTwo = ["onesies", "are", "in", "fashion"];
 console.log(longestPhrase(testArrayTwo));
+
+
+// PSEUDOCODE for Release #1
+//
+// Define function that takes two objects as inputs
+// Initialize shared_key_value variable set to false
+// Loop through each key/value pair in first object
+//     Compare current key/value pair to every other key/value pair in second object
+//         If first key/value equals second key/value, update shared_key_value to true
+// Return shared_key_value
+
