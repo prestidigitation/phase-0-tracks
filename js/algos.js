@@ -55,11 +55,39 @@ console.log(sharedKeyValue({car_make: "Honda", model: "Civic", year: 1991}, {car
 //
 // Define function that takes an integer as input
 // Initialize alphabet variable set to string of alphabet letters
-// Initialize generated_strings empty array
+// Initialize generated_strings_array set to empty array
 // Loop a number of times equal to input integer
 //     Initialize random_letters string variable
-//     WHILE i is less than a random number between 1 and 10
+//     Initialize counter set to zero
+//     WHILE counter is less than a random number between 1 and 10
 //         Concatenate random_letters string and random letter from alphabet
+//         Increment counter by 1
 //     Add random_letters variable to generated_strings array
 // Return generated_strings array
 
+function randomStringsGenerator(int) {
+    generated_strings_array = [];
+    counter = 0
+    while (counter < int) {
+        generated_strings_array.push(randomLettersGenerator());
+        counter += 1;
+    }
+    return generated_strings_array;
+}
+
+function randomLettersGenerator() {
+    alphabet = "abcdefghijklmnopqrstuvwxyz";
+    random_letters = "";
+    for (i = 0; i < randomInt(1, 10); i++) {
+        random_letters += alphabet[randomInt(0, 25)];
+    }
+    return random_letters;
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(randomLettersGenerator());
+console.log(randomStringsGenerator(3));
+console.log(randomStringsGenerator(10));
