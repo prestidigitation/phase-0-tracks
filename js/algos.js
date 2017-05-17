@@ -91,3 +91,13 @@ function randomInt(min, max) {
 console.log(randomLettersGenerator());
 console.log(randomStringsGenerator(3));
 console.log(randomStringsGenerator(10));
+
+
+counter_two = 0
+while (counter_two < 10) {
+    counter_two += 1
+    generatedArray = randomStringsGenerator(5);
+    console.log(generatedArray);
+    longestString = longestPhrase(generatedArray);
+    console.log(longestString);
+}
