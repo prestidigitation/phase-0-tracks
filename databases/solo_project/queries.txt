@@ -1,0 +1,9 @@
+SELECT * FROM student;
+
+UPDATE student SET has_membership = "false" WHERE id = 4;
+
+SELECT * FROM yoga_teacher, student;
+
+SELECT yoga_teacher.last_name, student.first_name, student.last_name, student.has_membership FROM yoga_teacher, student;
+
+DELETE FROM student WHERE student.balance > 150;
