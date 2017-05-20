@@ -7,3 +7,40 @@ SELECT * FROM yoga_teacher, student;
 SELECT yoga_teacher.last_name, student.first_name, student.last_name, student.has_membership FROM yoga_teacher, student;
 
 DELETE FROM student WHERE student.balance > 150;
+---------------------------------------------------------------------------
+
+
+SELECT yoga_teacher.first_name, yoga_teacher.last_name, student.first_name, student.last_name, student.has_membership, student.balance
+    FROM student
+    JOIN yoga_teacher ON student.teacher_id = yoga_teacher.id;
+
+Earnest|Hughes|Roberto|Dawson|false|0
+Earnest|Hughes|Amber|Romero|true|25
+Ginger|Cobb|Mario|Warner|false|0
+Ebony|Klein|Cornelius|Fisher|false|0
+Ebony|Klein|Alison|Moody|true|55
+Alonzo|Payne|Toni|Paul|true|0
+Alonzo|Payne|Elaine|Long|false|20
+Ginger|Cobb|Bobby|Weber|false|0
+
+
+SELECT yoga_teacher.first_name, yoga_teacher.last_name, student.first_name, student.last_name, student.has_membership, student.balance
+    FROM student
+    LEFT JOIN yoga_teacher ON student.teacher_id = yoga_teacher.id;
+
+Earnest|Hughes|Roberto|Dawson|false|0
+Earnest|Hughes|Amber|Romero|true|25
+Ginger|Cobb|Mario|Warner|false|0
+Ebony|Klein|Cornelius|Fisher|false|0
+Ebony|Klein|Alison|Moody|true|55
+Alonzo|Payne|Toni|Paul|true|0
+Alonzo|Payne|Elaine|Long|false|20
+Ginger|Cobb|Bobby|Weber|false|0
+
+
+
+SELECT yoga_teacher.first_name, yoga_teacher.last_name, student.first_name, student.last_name, student.has_membership, student.balance
+    FROM student
+    FULL JOIN yoga_teacher ON student.teacher_id = yoga_teacher.id;
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
