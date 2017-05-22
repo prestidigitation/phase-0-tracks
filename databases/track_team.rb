@@ -8,7 +8,7 @@ create_student_table = <<-SQL
     id INTEGER PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    year VARCHAR(255),
+    year VARCHAR(255)
   )
 SQL
 
@@ -19,7 +19,7 @@ def create_student(db, first_name, last_name, year)
 end
 
 def delete_student(db, first_name, last_name)
-  db.execute("DELETE FROM student WHERE first_name = #{first_name} AND last_name = #{last_name}")
+  db.execute("DELETE FROM student WHERE first_name = ? AND last_name = ?", [first_name, last_name])
 end
 
 
@@ -33,7 +33,7 @@ create_student(db, "Dave", "Burgess", "senior")
 
 students = db.execute("SELECT * FROM student")
 students.each do |student|
- puts "#{student['first_name']} #{student['last_name']} is a #{student["year"]}"
+ puts "#{student['first_name']} #{student['last_name']} is a #{student["year"]}."
 end
 
 delete_student(db, "Carrie", "Campbell")
@@ -45,7 +45,7 @@ puts db.execute("SELECT * FROM student")
 #     id INTEGER PRIMARY KEY,
 #     first_name VARCHAR(255),
 #     last_name VARCHAR(255),
-#     year VARCHAR(255),
+#     year VARCHAR(255)
 #   )
 # SQL
 
