@@ -9,15 +9,15 @@ function addPinkBorder(event) {
 function hideLizard(event) {
   console.log("click happened! here's the click event:");
   console.log(event);
-  photo.hidden = true;
-  // photo.style.display = "none";
+  photo.style.display = "none";
+  // photo.hidden = true;
 }
 
 function revealLizard(event) {
   console.log("click happened! here's the click event:");
   console.log(event);
-  photo.hidden = false;
-  // photo.style.display = "none";
+  photo.style.display = "initial";
+  // photo.hidden = false;
 }
 
 var photo = document.getElementById("lizard-photo");
