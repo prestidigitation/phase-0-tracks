@@ -12,8 +12,15 @@ em {
 }
 
 #colored_paragraph {
-  color: hotpink;
+  background-color: hotpink;
 }
 
-#resize_paragraph_one {
+#paragraph_two_color {
+  max-width: 20%;
+  background-color: black;
+}
+
+#paragraph_two_default {
+  max-width: 20%;
+  background-color: black;
 }
