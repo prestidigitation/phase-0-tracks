@@ -1,0 +1,26 @@
+body {
+  background-color: teal;
+  color: yellow;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+em {
+  color: red;
+}
+
+#colored_paragraph {
+  background-color: hotpink;
+}
+
+#paragraph_two_color {
+  max-width: 20%;
+  background-color: black;
+}
+
+#paragraph_two_default {
+  max-width: 20%;
+  background-color: black;
+}
