@@ -6,3 +6,14 @@ body {
 div {
   margin-bottom: 20px;
 }
+
+em {
+  color: red;
+}
+
+#colored_paragraph {
+  color: hotpink;
+}
+
+#resize_paragraph_one {
+}
