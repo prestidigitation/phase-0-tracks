@@ -1,4 +1,5 @@
 # 9.1 How the Web Works
+## Release 0
 ### What are some common HTTP status codes?
 
 The most common error code is the 404 error. This indicates that the requested resource was either not found or is no longer available. This can be the result of things like typos or a web page that is no longer being hosted.
